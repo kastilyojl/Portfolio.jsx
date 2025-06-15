@@ -2,7 +2,7 @@ import React from "react";
 import Container from "./components/container";
 import Portfolio from "./assets/portfolio.png";
 import Enrollment2023 from "./assets/enrollment2023.png";
-import Enrollment2025 from "./assets/enrollment2025.png";
+import Enrollment2025 from "./assets/Enrollment2025.png";
 import codingChallenge from "./assets/codingChallenge.png";
 
 export default function Project() {
