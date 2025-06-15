@@ -1,0 +1,246 @@
+import React from "react";
+import Container from "./components/container";
+import Portfolio from "./assets/portfolio.png";
+import Enrollment2023 from "./assets/enrollment2023.png";
+import Enrollment2025 from "./assets/enrollment2025.png";
+import codingChallenge from "./assets/codingChallenge.png";
+
+export default function Project() {
+  const projects = [
+    {
+      title: "Enrollment System v2",
+      image: Enrollment2025,
+      description: "Latest version with backend API and React frontend.",
+      links: [
+        {
+          name: "https://youtu.be/PLVc0pqBGoc?si=Go4hovhR4C8-vG_5",
+          icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+          url: "https://youtu.be/PLVc0pqBGoc?si=Go4hovhR4C8-vG_5",
+        },
+        {
+          name: "https://github.com/kastilyojl/EnrollmentThesis",
+          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          url: "https://github.com/kastilyojl/EnrollmentThesis",
+        },
+      ],
+      technologies: [
+        {
+          name: "React JS",
+          icon: "https://cdn-icons-png.flaticon.com/128/1126/1126012.png",
+        },
+        {
+          name: "Laravel",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
+        },
+        {
+          name: "Inertia",
+          icon: "https://avatars.githubusercontent.com/u/47703742?s=200&v=4",
+        },
+        {
+          name: "Shadcn/UI",
+          icon: "https://th.bing.com/th/id/OIP.beVjRiHFNXgyqzqo1Ra27wAAAA?w=154&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+        },
+        {
+          name: "Flowbite",
+          icon: "https://flowbite.com/docs/images/logo.svg",
+        },
+        {
+          name: "Python",
+          icon: "https://cdn-icons-png.flaticon.com/128/3098/3098090.png",
+        },
+        {
+          name: "Tailwind",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+        },
+      ],
+    },
+    {
+      title: "Coding Challenge",
+      image: codingChallenge,
+      description: "Compilation of coding challenges and algorithm problems.",
+      links: [
+        {
+          name: "https://youtu.be/Dqv0Vhv9E9w",
+          icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+          url: "https://youtu.be/Dqv0Vhv9E9w",
+        },
+        {
+          name: "https://github.com/kastilyojl/Coding-Challenge",
+          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          url: "https://github.com/kastilyojl/Coding-Challenge",
+        },
+      ],
+      technologies: [
+        {
+          name: "React JS",
+          icon: "https://cdn-icons-png.flaticon.com/128/1126/1126012.png",
+        },
+        {
+          name: "Laravel",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
+        },
+        {
+          name: "Tailwind",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+        },
+        {
+          name: "RESTful API",
+          icon: "https://cdn-icons-png.flaticon.com/128/15435/15435224.png",
+        },
+      ],
+    },
+    {
+      title: "Portfolio v1",
+      image: Portfolio,
+      description:
+        "This is my first portfolio website. A static website built using HTML, CSS, Javascript and Bootstrap to showcase my projects and skills.",
+      links: [
+        {
+          name: "https://github.com/kastilyojl/Kast1ly0-Folio",
+          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
+          url: "https://github.com/kastilyojl/Kast1ly0-Folio",
+        },
+        {
+          name: "https://kastilyojl.github.io/Kast1ly0-Folio",
+          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          url: "https://kastilyojl.github.io/Kast1ly0-Folio",
+        },
+      ],
+      technologies: [
+        {
+          name: "HTML",
+          icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+        },
+        {
+          name: "CSS",
+          icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+        },
+        {
+          name: "JavaScript",
+          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+        },
+        {
+          name: "Bootstrap",
+          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
+        },
+      ],
+    },
+    {
+      title: "Enrollment System v1",
+      image: Enrollment2023,
+      description:
+        "Enrollment System demo with basic features for student enrollment process.",
+      links: [
+        {
+          name: "https://youtu.be/Vlb-YuNlLfw",
+          icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+          url: "https://youtu.be/Vlb-YuNlLfw",
+        },
+        {
+          name: "https://github.com/kastilyojl/Enrollment-Management-System",
+          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
+          url: "https://github.com/kastilyojl/Enrollment-Management-System",
+        },
+        {
+          name: "https://enrollinacademy.infinityfreeapp.com/",
+          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          url: "https://enrollinacademy.infinityfreeapp.com/",
+        },
+      ],
+      technologies: [
+        {
+          name: "HTML",
+          icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+        },
+        {
+          name: "CSS",
+          icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+        },
+        {
+          name: "Javascript",
+          icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+        },
+        {
+          name: "PHP",
+          icon: "https://cdn-icons-png.flaticon.com/128/15474/15474204.png",
+        },
+        {
+          name: "MySQL",
+          icon: "https://cdn-icons-png.flaticon.com/128/1199/1199128.png",
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Container>
+      <h3 className="font-medium text-white sm:text-lg mb-4">Projects</h3>
+
+      <div className="space-y-6">
+        {projects.map((project, i) => (
+          <div
+            key={i}
+            className="flex flex-col md:flex-row items-start gap-4 border border-white/10 p-2 rounded"
+          >
+            <img
+              alt={project.title}
+              src={project.image}
+              className="w-full md:w-60 h-36 rounded object-cover"
+            />
+
+            <div className="flex-1">
+              <h3 className="font-medium text-white sm:text-lg">
+                {project.title}
+              </h3>
+              <p className="mt-1 text-gray-400">{project.description}</p>
+
+              {/* Links */}
+              {project.links && (
+                <div className="flex flex-col gap-2 mt-2">
+                  {project.links.map((link, j) => (
+                    <a
+                      key={j}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <img
+                        src={link.icon}
+                        alt={link.name}
+                        className="w-5 h-5 hover:opacity-80"
+                      />
+                      <span className="text-white text-xs">{link.name}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {/* Technologies */}
+              {project.technologies && (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {project.technologies.map((tech, j) => (
+                    <div
+                      key={j}
+                      className="inline-flex items-center gap-1 bg-white/10 rounded px-2 py-1"
+                    >
+                      <img
+                        src={tech.icon}
+                        alt={tech.name}
+                        title={tech.name}
+                        className="w-4 h-4"
+                      />
+                      <span className="text-[10px] text-gray-300">
+                        {tech.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Container>
+  );
+}
