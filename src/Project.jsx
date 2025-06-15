@@ -12,7 +12,7 @@ export default function Project() {
       title: "Portfolio v2",
       image: Portfolio2025,
       description:
-        "Thesis project featuring an Enrollment System with OCR integration for scanning registration forms, data analysis using the XGBoost algorithm, and Role-Based Access Control (RBAC) for secure user access management. The system supports five user roles: Super Admin, Registrar, Accounting, Professor, and Student.",
+        "This is my second portfolio website. A static website built using React.js and Tailwind CSS to showcase my projects and skills.",
       links: [
         {
           name: "https://github.com/kastilyojl/Portfolio.jsx",
@@ -95,6 +95,11 @@ export default function Project() {
           name: "https://youtu.be/Dqv0Vhv9E9w",
           icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
           url: "https://youtu.be/Dqv0Vhv9E9w",
+        },
+        {
+          name: "https://github.com/kastilyojl/Coding-Challenge",
+          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
+          url: "https://github.com/kastilyojl/Coding-Challenge",
         },
         {
           name: "https://github.com/kastilyojl/Coding-Challenge",
