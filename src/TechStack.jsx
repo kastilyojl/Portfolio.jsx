@@ -92,14 +92,22 @@ export default function TechStack() {
     : allTechnologies.filter((tech) => mainTechnologies.includes(tech.title));
 
   return (
-    <Container className="space-y-4">
-      <h3 className="font-medium text-white text-lg">Technologies</h3>
+    <Container className="space-y-4 transition duration-300 hover:border-white">
+      <h3 className="font-medium text-[#9229A8] text-lg">Technologies</h3>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4 justify-items-center">
         {displayedTechnologies.map((tech) => (
           <Box key={tech.title} image={tech.image} title={tech.title} />
         ))}
       </div>
+
+      {showAll && (
+        <div className="text-gray-400 text-xs text-center">
+          Disclaimer: This list includes all the technologies I have worked with
+          in the past. It does not necessarily reflect my current level of
+          proficiency or expertise in each.
+        </div>
+      )}
 
       <div className="flex flex-wrap justify-center gap-2 text-sm">
         <button

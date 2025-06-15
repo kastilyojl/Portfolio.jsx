@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+.typing-cursor {
+  animation: blink-cursor 0.7s infinite;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+@keyframes blink-cursor {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

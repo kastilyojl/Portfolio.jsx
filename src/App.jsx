@@ -15,24 +15,17 @@ function App() {
         </div>
 
         <div className="right p-2 flex flex-col gap-4 overflow-y-auto">
-          <Container>
-            <h3 className="font-medium text-white sm:text-lg">About Me</h3>
+          <Container className="transition duration-300 hover:border-white">
+            <h3 className="font-medium text-[#9229A8] sm:text-lg">About Me</h3>
             <p className="mt-0.5 text-gray-400">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
-              possimus dicta, facilis voluptatibus, dolorum cumque quae vero sed
-              alias quis rerum voluptatem quasi fuga beatae ab delectus
-              perferendis fugit autem. Molestias facilis deserunt at iusto,
-              totam ducimus doloribus maiores cumque! Nemo tempora voluptate
-              velit praesentium distinctio nisi doloremque alias, similique
-              accusantium quia vero sequi pariatur ratione cupiditate rem, porro
-              dolor. Numquam blanditiis veritatis perferendis dicta possimus
-              consequatur sunt fugit, doloribus porro ipsam nostrum nemo
-              reiciendis odio error aut impedit veniam! Perspiciatis reiciendis
-              tenetur illum iure? Fugiat obcaecati nemo ullam architecto? Ipsa
-              corporis aliquid eligendi assumenda illo nesciunt delectus nam,
-              ullam soluta minus numquam voluptatem earum dolorem nemo quis! Sit
-              repellendus tempore autem deleniti assumenda sapiente blanditiis
-              placeat voluptates, illo voluptatum.
+              Hello! I'm John Lester B. Castillo, a passionate web developer
+              with experience in both front-end and back-end development. I
+              enjoy creating interactive and user-friendly web applications.
+              From designing responsive interfaces to building robust APIs, I’m
+              always eager to learn new technologies and continuously sharpen my
+              skills. I’m especially excited about developing projects that
+              solve real-world problems and contribute to meaningful, impactful
+              solutions.
             </p>
           </Container>
           <TechStack />

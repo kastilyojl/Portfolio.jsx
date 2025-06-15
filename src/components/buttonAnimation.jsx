@@ -5,7 +5,7 @@ export default function buttonAnimation({ title, icon }) {
     // <!-- From Uiverse.io by EcheverriaJesus -->
     <div class="group relative">
       <button>
-        <svg class="w-7 h-7 fill-[#10B981]" viewBox="0 0 576 512">
+        <svg class="w-7 h-7 fill-[#9229A8]" viewBox="0 0 576 512">
           {icon}
         </svg>
       </button>

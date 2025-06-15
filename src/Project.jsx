@@ -4,13 +4,44 @@ import Portfolio from "./assets/portfolio.png";
 import Enrollment2023 from "./assets/enrollment2023.png";
 import Enrollment2025 from "./assets/Enrollment2025.png";
 import codingChallenge from "./assets/codingChallenge.png";
+import Portfolio2025 from "./assets/portfolio2025.png";
 
 export default function Project() {
   const projects = [
     {
+      title: "Portfolio v2",
+      image: Portfolio2025,
+      description:
+        "Thesis project featuring an Enrollment System with OCR integration for scanning registration forms, data analysis using the XGBoost algorithm, and Role-Based Access Control (RBAC) for secure user access management. The system supports five user roles: Super Admin, Registrar, Accounting, Professor, and Student.",
+      links: [
+        {
+          name: "https://github.com/kastilyojl/Portfolio.jsx",
+          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
+          url: "https://github.com/kastilyojl/Portfolio.jsx",
+        },
+        {
+          name: "https://portfolio-jsx-2keh.vercel.app/",
+          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          url: "https://portfolio-jsx-2keh.vercel.app/",
+        },
+      ],
+      technologies: [
+        {
+          name: "React JS",
+          icon: "https://cdn-icons-png.flaticon.com/128/1126/1126012.png",
+        },
+
+        {
+          name: "Tailwind",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+        },
+      ],
+    },
+    {
       title: "Enrollment System v2",
       image: Enrollment2025,
-      description: "Latest version with backend API and React frontend.",
+      description:
+        "Thesis project featuring an Enrollment System with OCR integration for scanning registration forms, data analysis using the XGBoost algorithm, and Role-Based Access Control (RBAC) for secure user access management. The system supports five user roles: Super Admin, Registrar, Accounting, Professor, and Student.",
       links: [
         {
           name: "https://youtu.be/PLVc0pqBGoc?si=Go4hovhR4C8-vG_5",
@@ -19,7 +50,7 @@ export default function Project() {
         },
         {
           name: "https://github.com/kastilyojl/EnrollmentThesis",
-          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/EnrollmentThesis",
         },
       ],
@@ -57,7 +88,8 @@ export default function Project() {
     {
       title: "Coding Challenge",
       image: codingChallenge,
-      description: "Compilation of coding challenges and algorithm problems.",
+      description:
+        "This project was developed as part of my internship application exam. It includes login, registration, and a homepage. The frontend communicates with the backend through APIs, secured using JSON Web Token (JWT) authentication.",
       links: [
         {
           name: "https://youtu.be/Dqv0Vhv9E9w",
@@ -129,7 +161,7 @@ export default function Project() {
       title: "Enrollment System v1",
       image: Enrollment2023,
       description:
-        "Enrollment System demo with basic features for student enrollment process.",
+        "Developed a proposed Enrollment System for our Software Engineering course, integrating a Decision Tree algorithm to predict student eligibility for enrollment based on their academic performance and records.",
       links: [
         {
           name: "https://youtu.be/Vlb-YuNlLfw",
@@ -174,13 +206,13 @@ export default function Project() {
 
   return (
     <Container>
-      <h3 className="font-medium text-white sm:text-lg mb-4">Projects</h3>
+      <h3 className="font-medium text-[#9229A8] sm:text-lg mb-4">Projects</h3>
 
       <div className="space-y-6">
         {projects.map((project, i) => (
           <div
             key={i}
-            className="flex flex-col md:flex-row items-start gap-4 border border-white/10 p-2 rounded"
+            className="flex flex-col md:flex-row items-start gap-4 border border-white/10 p-2 rounded transition duration-300 hover:border-white"
           >
             <img
               alt={project.title}
@@ -196,7 +228,7 @@ export default function Project() {
 
               {/* Links */}
               {project.links && (
-                <div className="flex flex-col gap-2 mt-2">
+                <div className="flex flex-col gap-2 mt-2 ">
                   {project.links.map((link, j) => (
                     <a
                       key={j}
