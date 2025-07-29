@@ -101,11 +101,6 @@ export default function Project() {
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/Coding-Challenge",
         },
-        {
-          name: "https://github.com/kastilyojl/Coding-Challenge",
-          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
-          url: "https://github.com/kastilyojl/Coding-Challenge",
-        },
       ],
       technologies: [
         {

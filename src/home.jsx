@@ -3,6 +3,7 @@ import Button1 from "./components/buttonAnimation";
 import SimpleButton from "./components/simpleButton";
 import Container from "./components/container";
 import CV from "./assets/John_Lester_Castillo_LatestCV.pdf";
+import profile_pic from "./assets/profile_pic.png";
 
 function Home() {
   const [displayedText, setDisplayedText] = useState("");
@@ -103,7 +104,7 @@ function Home() {
         <div className="flex items-start gap-4">
           <img
             alt=""
-            src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t1.6435-9/78078928_2506768542929650_6476841730686582784_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=669761&_nc_eui2=AeGIu-cLME4UEOKO-Pa50GzljUlfWrgYeJKNSV9auBh4kiaVXZ1SK152K4COTbm3_bwuPjoOfnnillZcq4g7rSLO&_nc_ohc=xZ5L2hORpXUQ7kNvwGRbF7o&_nc_oc=Adlcd-cjdUldjSqVdi5y7Pa0SDRB7RCW42r0T1OIFo-logmIZP6SYpLwXVB4J5AbKzc&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=ZNAqgPgjl6w7YqyEwyuX5w&oh=00_AfPHjI6lojVLrjl0DklnZlh_NzZ-UyCC-C033EU302IWWg&oe=68768FE7"
+            src={profile_pic}
             className="size-20 rounded object-cover"
           />
 

@@ -75,7 +75,8 @@ const allTechnologies = [
   },
   {
     title: "Ngrok",
-    image: "https://th.bing.com/th/id/OIP.DHaNUAzEr36T3SYMbQKDQgAAAA?w=144&h=150&c=7&r=0&o=7&pid=1.7&rm=3",
+    image:
+      "https://th.bing.com/th/id/OIP.DHaNUAzEr36T3SYMbQKDQgAAAA?w=144&h=150&c=7&r=0&o=7&pid=1.7&rm=3",
   },
 ];
 
@@ -85,6 +86,7 @@ const mainTechnologies = [
   "Java",
   "Git",
   "Inertia",
+  "RESTful API",
   "Tailwind CSS",
 ];
 
