@@ -19,7 +19,7 @@ function Home() {
   ];
 
   const roles = [
-    "I'm a Web Developer!...",
+    "I'm a Software Developer!...",
     "😁",
     "I'm from Laguna.",
     "🎮",
@@ -163,7 +163,7 @@ function Home() {
           <a href={CV} target="_blank" className="w-full">
             <SimpleButton
               children={"Download CV"}
-              className={"bg-white text-black"}
+              className={"bg-white text-black animate-pulse"}
             />
           </a>
           <a
@@ -179,7 +179,7 @@ function Home() {
         </div>
       </Container>
 
-      <div className="px-4 min-h-[200px]">
+      <div className="px-4 min-h-auto">
         <p className="text-gray-400 text-md">
           {displayedText}
           <span className="typing-cursor text-[#9229A8]">|</span>

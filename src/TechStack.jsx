@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Box from "./components/box";
 import Container from "./components/container";
+import visualbasic from "./assets/visualbasic.png";
 
 const allTechnologies = [
   {
@@ -19,6 +20,10 @@ const allTechnologies = [
     title: "Java",
     image:
       "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+  },
+  {
+    title: "VB .Net",
+    image: visualbasic,
   },
   {
     title: "HTML",
@@ -83,7 +88,7 @@ const allTechnologies = [
 const mainTechnologies = [
   "React.js",
   "Laravel",
-  "Java",
+  "VB .Net",
   "Git",
   "Inertia",
   "RESTful API",

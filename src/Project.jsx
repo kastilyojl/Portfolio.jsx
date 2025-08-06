@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Container from "./components/container";
 import Portfolio from "./assets/portfolio.png";
 import Enrollment2023 from "./assets/enrollment2023.png";
@@ -7,6 +7,12 @@ import codingChallenge from "./assets/codingChallenge.png";
 import Portfolio2025 from "./assets/portfolio2025.png";
 
 export default function Project() {
+  useEffect(() => {
+    if (window.AOS) {
+      window.AOS.init({ duration: 800, once: true });
+    }
+  }, []);
+
   const projects = [
     {
       title: "Portfolio v2",
@@ -211,6 +217,7 @@ export default function Project() {
       <div className="space-y-6">
         {projects.map((project, i) => (
           <div
+            data-aos="zoom-in-up"
             key={i}
             className="flex flex-col md:flex-row items-start gap-4 border border-white/10 p-2 rounded transition duration-300 hover:border-white"
           >
