@@ -167,12 +167,12 @@ function Home() {
             />
           </a>
           <a
-            href="https://github.com/kastilyojl"
+            href="https://www.linkedin.com/in/john-lester-castillo-828890327/"
             target="_blank"
             className="w-full"
           >
             <SimpleButton
-              children={"Github"}
+              children={"LinkedIn"}
               className={"text-white border border-white"}
             />
           </a>
