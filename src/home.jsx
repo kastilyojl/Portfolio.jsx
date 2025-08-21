@@ -131,17 +131,7 @@ function Home() {
               }
             />
           </a>
-          <a
-            href="https://www.linkedin.com/in/john-lester-castillo-828890327/"
-            target="_blank"
-          >
-            <Button1
-              title={"LinkedIn"}
-              icon={
-                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-340.7C24.1 107.3 0 83.2 0 53.6 0 24 24.1 0 53.84 0c29.74 0 53.84 24 53.84 53.6 0 29.6-24.1 53.7-53.84 53.7zM447.9 448h-92.4V302.4c0-34.7-.7-79.2-48.24-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.4V148.9h88.7v40.8h1.3c12.4-23.5 42.6-48.2 87.7-48.2 93.8 0 111.1 61.8 111.1 142.3V448z" />
-              }
-            />
-          </a>
+
           <a href="https://t.me/Kast1ly0" target="_blank">
             <Button1
               title={"Telegram"}
