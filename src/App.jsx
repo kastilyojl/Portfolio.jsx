@@ -8,6 +8,7 @@ function App() {
   const [showScreenshots, setShowScreenshots] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     if (window.AOS) {
@@ -15,10 +16,8 @@ function App() {
     }
   }, []);
 
-  const openScreenshots = (project) => {
-    setCurrentProject(project);
-    setCurrentIndex(0);
-    setShowScreenshots(true);
+  const toggleDetails = () => {
+    setShowDetails((prev) => !prev);
   };
 
   const nextImage = () => {
@@ -111,7 +110,16 @@ function App() {
               )}
             </div>
 
-            <p className="mt-2 text-gray-300">{currentProject.description}</p>
+            <div onClick={toggleDetails} className="cursor-pointer">
+              <span className="text-blue-400">
+                {showDetails ? "Hide Details" : "Show Details"}
+              </span>
+
+              {showDetails && (
+                <p className="mt-2 text-gray-300">{currentProject.description}</p>
+              )}
+            </div>
+
 
              {/* Google Drive Link */}
             {currentProject.driveLink && (
