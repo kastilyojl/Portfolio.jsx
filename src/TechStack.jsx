@@ -83,6 +83,16 @@ const allTechnologies = [
     image:
       "https://th.bing.com/th/id/OIP.DHaNUAzEr36T3SYMbQKDQgAAAA?w=144&h=150&c=7&r=0&o=7&pid=1.7&rm=3",
   },
+  {
+    title: "Figma",
+    image:
+      "https://cdn-icons-png.flaticon.com/128/5968/5968705.png",
+  },
+  {
+    title: "Tesseract.js",
+    image:
+      "https://raw.githubusercontent.com/naptha/tesseract.js/master/docs/images/tesseract.png",
+  },
 ];
 
 const mainTechnologies = [

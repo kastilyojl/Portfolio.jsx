@@ -21,12 +21,12 @@ export default function Project() {
         "This is my second portfolio website. A static website built using React.js and Tailwind CSS to showcase my projects and skills.",
       links: [
         {
-          name: "https://github.com/kastilyojl/Portfolio.jsx",
+          name: "Repository Link",
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/Portfolio.jsx",
         },
         {
-          name: "https://portfolio-jsx-2keh.vercel.app/",
+          name: "Project Link",
           icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
           url: "https://portfolio-jsx-2keh.vercel.app/",
         },
@@ -50,12 +50,12 @@ export default function Project() {
         "Thesis project featuring an Enrollment System with OCR integration for scanning registration forms, data analysis using the XGBoost algorithm, and Role-Based Access Control (RBAC) for secure user access management. The system supports five user roles: Super Admin, Registrar, Accounting, Professor, and Student.",
       links: [
         {
-          name: "https://youtu.be/PLVc0pqBGoc?si=Go4hovhR4C8-vG_5",
+          name: "Key Process Demo",
           icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
           url: "https://youtu.be/PLVc0pqBGoc?si=Go4hovhR4C8-vG_5",
         },
         {
-          name: "https://github.com/kastilyojl/EnrollmentThesis",
+          name: "Repository Link (Private)",
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/EnrollmentThesis",
         },
@@ -98,15 +98,20 @@ export default function Project() {
         "This project was developed as part of my internship application exam. It includes login, registration, and a homepage. The frontend communicates with the backend through APIs, secured using JSON Web Token (JWT) authentication.",
       links: [
         {
-          name: "https://youtu.be/Dqv0Vhv9E9w",
+          name: "Project Demo",
           icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
           url: "https://youtu.be/Dqv0Vhv9E9w",
         },
         {
-          name: "https://github.com/kastilyojl/Coding-Challenge",
+          name: "Repository Link",
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/Coding-Challenge",
         },
+        {
+          name: "Prototype Link",
+          icon: "https://cdn-icons-png.flaticon.com/128/5968/5968705.png",
+          url: "https://www.figma.com/file/kxfsQomPqhDfMVOK9uNy10/Templates",
+        }
       ],
       technologies: [
         {
@@ -125,6 +130,10 @@ export default function Project() {
           name: "RESTful API",
           icon: "https://cdn-icons-png.flaticon.com/128/15435/15435224.png",
         },
+        {
+          name: "Figma",
+          icon: "https://cdn-icons-png.flaticon.com/128/5968/5968705.png",
+        },
       ],
     },
     {
@@ -134,12 +143,12 @@ export default function Project() {
         "This is my first portfolio website. A static website built using HTML, CSS, Javascript and Bootstrap to showcase my projects and skills.",
       links: [
         {
-          name: "https://github.com/kastilyojl/Kast1ly0-Folio",
+          name: "Repository Link",
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/Kast1ly0-Folio",
         },
         {
-          name: "https://kastilyojl.github.io/Kast1ly0-Folio",
+          name: "Project Link",
           icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
           url: "https://kastilyojl.github.io/Kast1ly0-Folio",
         },
@@ -170,17 +179,17 @@ export default function Project() {
         "Developed a proposed Enrollment System for our Software Engineering course, integrating a Decision Tree algorithm to predict student eligibility for enrollment based on their academic performance and records.",
       links: [
         {
-          name: "https://youtu.be/Vlb-YuNlLfw",
+          name: "Key Process Demo",
           icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
           url: "https://youtu.be/Vlb-YuNlLfw",
         },
         {
-          name: "https://github.com/kastilyojl/Enrollment-Management-System",
+          name: "Repository Link",
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/Enrollment-Management-System",
         },
         {
-          name: "https://enrollinacademy.infinityfreeapp.com/",
+          name: "Project Link",
           icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
           url: "https://enrollinacademy.infinityfreeapp.com/",
         },
@@ -234,7 +243,34 @@ export default function Project() {
               <p className="mt-1 text-gray-400">{project.description}</p>
 
               {/* Links */}
-              {project.links && (
+            {project.links && (
+              <div className="flex flex-col gap-2 mt-2">
+                {project.links.map((link, j) => (
+                  <a
+                    key={j}
+                    href={link.name === "Repository Link (Private)" ? "#" : link.url}
+                    target={link.name === "Repository Link (Private)" ? "" : "_blank"}
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      if (link.name === "Repository Link (Private)") {
+                        e.preventDefault();
+                        alert("This repository is private. Please contact me for access.");
+                      }
+                    }}
+                    className="flex items-center gap-2"
+                  >
+                    <img
+                      src={link.icon}
+                      alt={link.name}
+                      className="w-5 h-5 hover:opacity-80"
+                    />
+                    <span className="text-white text-xs">{link.name}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+
+              {/* {project.links && (
                 <div className="flex flex-col gap-2 mt-2 ">
                   {project.links.map((link, j) => (
                     <a
@@ -253,7 +289,7 @@ export default function Project() {
                     </a>
                   ))}
                 </div>
-              )}
+              )} */}
 
               {/* Technologies */}
               {project.technologies && (
