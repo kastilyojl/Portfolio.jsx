@@ -1,15 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./home";
 import Project from "./Project";
 import TechStack from "./TechStack";
 import Container from "./components/container";
 
 function App() {
+  const [showScreenshots, setShowScreenshots] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({ duration: 800, once: true });
     }
   }, []);
+
+  const openScreenshots = (project) => {
+    setCurrentProject(project);
+    setCurrentIndex(0);
+    setShowScreenshots(true);
+  };
+
+  const nextImage = () => {
+    if (!currentProject) return;
+    setCurrentIndex((prev) =>
+      prev === (currentProject.screenshots?.length || 1) - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    if (!currentProject) return;
+    setCurrentIndex((prev) =>
+      prev === 0
+        ? (currentProject.screenshots?.length || 1) - 1
+        : prev - 1
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black lg:pr-20 lg:pt-20 lg:pl-20">
@@ -38,9 +64,69 @@ function App() {
             </p>
           </Container>
           <TechStack />
-          <Project />
+          <Project setShowScreenshots={setShowScreenshots} setCurrentProject={setCurrentProject} />
         </div>
       </div>
+
+      {/* Modal */}
+      {showScreenshots && currentProject && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <Container className="relative bg-black p-6 rounded shadow-lg w-[90%] max-w-3xl">
+            <button
+              onClick={() => setShowScreenshots(false)}
+              className="absolute top-2 right-2 text-white font-bold cursor-pointer"
+            >
+              X
+            </button>
+
+            <h3 className="text-lg font-bold mb-4 text-white">{currentProject.title}</h3>
+
+            {/* Carousel */}
+            <div className="relative">
+              <img
+                src={
+                  currentProject.screenshots
+                    ? currentProject.screenshots[currentIndex]
+                    : currentProject.image
+                }
+                alt={`${currentProject.title} screenshot`}
+                className="w-full max-h-96 object-contain rounded mx-auto"
+              />
+
+              {currentProject.screenshots && currentProject.screenshots.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute top-1/2 -left-6 transform -translate-y-1/2 bg-white text-black p-1 rounded cursor-pointer"
+                  >
+                    &#8592;
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-white text-black p-1 rounded cursor-pointer"
+                  >
+                    &#8594;
+                  </button>
+                </>
+              )}
+            </div>
+
+            <p className="mt-2 text-gray-300">{currentProject.description}</p>
+
+             {/* Google Drive Link */}
+            {currentProject.driveLink && (
+              <a
+                href={currentProject.driveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-blue-500 underline"
+              >
+                View All Screenshots
+              </a>
+            )}
+          </Container>
+        </div>
+      )}
     </div>
   );
 }

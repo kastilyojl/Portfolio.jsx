@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "./components/container";
 import Portfolio from "./assets/portfolio.png";
 import Enrollment2023 from "./assets/enrollment2023.png";
 import Enrollment2025 from "./assets/Enrollment2025.png";
 import codingChallenge from "./assets/codingChallenge.png";
 import Portfolio2025 from "./assets/portfolio2025.png";
+import OCR from "./assets/enrollment_v2/ocr.png";
+import RBAC from "./assets/enrollment_v2/rbac.png";
+import Dashboard from "./assets/enrollment_v2/dashboard.png";
+import AuditTrail from "./assets/enrollment_v2/audit_trail.png";
+import UserManagement from "./assets/enrollment_v2/user_management.png";
 
-export default function Project() {
+export default function Project({ setShowScreenshots, setCurrentProject }) {
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({ duration: 800, once: true });
@@ -46,6 +51,15 @@ export default function Project() {
     {
       title: "Enrollment System v2",
       image: Enrollment2025,
+      screenshots: [
+        Enrollment2025,
+        OCR,
+        RBAC,
+        AuditTrail,
+        UserManagement,
+        Dashboard
+      ],
+      driveLink: "https://drive.google.com/drive/folders/1SRunYskfypoo1ORxM8z2fQwC1vNDciyr?usp=sharing",
       description:
         "Thesis project featuring an Enrollment System with OCR integration for scanning registration forms, data analysis using the XGBoost algorithm, and Role-Based Access Control (RBAC) for secure user access management. The system supports five user roles: Super Admin, Registrar, Accounting, Professor, and Student.",
       links: [
@@ -58,6 +72,11 @@ export default function Project() {
           name: "Repository Link (Private)",
           icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
           url: "https://github.com/kastilyojl/EnrollmentThesis",
+        },
+        {
+          name: "System Screenshots",
+          icon: "https://cdn-icons-png.flaticon.com/128/1375/1375106.png",
+          action: "openScreenshots",
         },
       ],
       technologies: [
@@ -219,6 +238,11 @@ export default function Project() {
     },
   ];
 
+   const openScreenshots = (project) => {
+    setCurrentProject(project);
+    setShowScreenshots(true);
+  };
+
   return (
     <Container>
       <h3 className="font-medium text-[#9229A8] sm:text-lg mb-4">Projects</h3>
@@ -242,43 +266,36 @@ export default function Project() {
               </h3>
               <p className="mt-1 text-gray-400">{project.description}</p>
 
-              {/* Links */}
-            {project.links && (
-              <div className="flex flex-col gap-2 mt-2">
-                {project.links.map((link, j) => (
-                  <a
-                    key={j}
-                    href={link.name === "Repository Link (Private)" ? "#" : link.url}
-                    target={link.name === "Repository Link (Private)" ? "" : "_blank"}
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      if (link.name === "Repository Link (Private)") {
-                        e.preventDefault();
-                        alert("This repository is private. Please contact me for access.");
-                      }
-                    }}
-                    className="flex items-center gap-2"
-                  >
-                    <img
-                      src={link.icon}
-                      alt={link.name}
-                      className="w-5 h-5 hover:opacity-80"
-                    />
-                    <span className="text-white text-xs">{link.name}</span>
-                  </a>
-                ))}
-              </div>
-            )}
-
-              {/* {project.links && (
-                <div className="flex flex-col gap-2 mt-2 ">
+                {/* Links */}
+                {project.links && (
+                <div className="flex flex-col gap-2 mt-2">
                   {project.links.map((link, j) => (
                     <a
                       key={j}
-                      href={link.url}
-                      target="_blank"
+                      href={
+                        link.name === "Repository Link (Private)" || 
+                        link.name === "System Screenshots"
+                          ? "#"
+                          : link.url
+                      }
+                      target={
+                        link.name === "Repository Link (Private)" || 
+                        link.name === "System Screenshots"
+                          ? ""
+                          : "_blank"
+                      }
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2"
+                      onClick={(e) => {
+                        if (link.name === "System Screenshots") {
+                          e.preventDefault();
+                          openScreenshots(project);
+                        }
+                        if (link.name === "Repository Link (Private)") {
+                          e.preventDefault();
+                          alert("This repository is private. Please contact me for access.");
+                        }
+                      }}
+                      className="flex items-center gap-2 cursor-pointer"
                     >
                       <img
                         src={link.icon}
@@ -289,7 +306,7 @@ export default function Project() {
                     </a>
                   ))}
                 </div>
-              )} */}
+              )}
 
               {/* Technologies */}
               {project.technologies && (
