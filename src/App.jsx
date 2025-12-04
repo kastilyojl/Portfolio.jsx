@@ -4,7 +4,6 @@ import Project from "./Project";
 import TechStack from "./TechStack";
 import Container from "./components/container";
 import SideNav from "./components/sideNav";
-import Eyes from "./components/Eyes";
 import Spline from "@splinetool/react-spline";
 
 function App() {
@@ -59,20 +58,14 @@ function App() {
         </section>
         <section 
           id="robot"
-          className="block lg:absolute bottom-0 left-0 w-full h-[55vh] flex flex-col items-center">
+          className="block -mt-20 md:-mt-10 lg:mt-0 lg:absolute lg:bottom-0 left-0 w-full h-[55vh] flex flex-col items-center">
             <Spline 
               scene="https://prod.spline.design/dGkl7hReKvdNmjX6/scene.splinecode"
               className="w-full h-full"
             />
           {/* Spline Shadow */}
           <div className="
-            w-48
-            h-12
-            -mt-22
-            opacity-70
-            pointer-events-none
-            rounded-full
-            blur-xl
+            w-48 h-12 -mt-22 opacity-70 pointer-events-none rounded-full blur-xl
             bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.55)_0%,rgba(147,51,234,0.25)_40%,transparent_75%)]">
           </div>
         </section>
@@ -82,16 +75,16 @@ function App() {
       <section id="about">
         <Container className="transition duration-300 hover:border-white">
           <h3 className="font-medium text-[#9229A8] sm:text-lg">About Me</h3>
-          <p className="mt-0.5 text-gray-400">
-            Hello! I'm [Name], a passionate software developer with experience in both front-end and back-end development. I enjoy creating interactive and user-friendly web applications. From designing responsive interfaces to building robust APIs, I’m always eager to learn new technologies and continuously sharpen my skills. I’m especially excited about developing projects that solve real-world problems and contribute to meaningful, impactful solutions.
-          </p>
+          <ul className="mt-2 text-gray-400 list-disc list-inside space-y-1">
+            <li className="hover:marker:text-purple-500">Full-stack web development with <span className="font-semibold text-white">Laravel, React, and MySQL</span></li>
+            <li className=" hover:marker:text-purple-500">Windows desktop apps using <span className="font-semibold text-white">.NET Windows Forms</span></li>
+            <li className=" hover:marker:text-purple-500">Building <span className="font-semibold text-white">responsive, interactive user interfaces</span></li>
+            </ul>
         </Container>
       </section>
-
       <section id="technologies">
         <TechStack />
       </section>
-
       <section id="projects">
         <Project setShowScreenshots={setShowScreenshots} setCurrentProject={setCurrentProject} />
       </section>

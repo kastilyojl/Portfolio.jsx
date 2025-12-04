@@ -53,27 +53,35 @@ function Home() {
             className="size-20 rounded object-cover"
           />
           <div>
-            <h3 className="font-medium text-white sm:text-lg">
-              [Name]
-            </h3>
-            <p className="mt-0.5 text-gray-700">
+           <h1 className="font-medium text-transparent sm:text-lg lg:text-3xl 
+               bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
+            John Lester Castillo
+          </h1>
+
+            {/* <p className="mt-0.5 text-gray-400">
               Software Developer (Web & Desktop) <br />    
-              📍[Place]
-            </p>
-            {/* <p className="mt-0.5 text-gray-700">Building smooth web & desktop apps with modern UI.</p> */}
+              📍Laguna, Philippines
+            </p> */}
+            <p className="mt-0.5 text-gray-400">Building smooth web & desktop apps with modern UI.</p>
           </div>
         </div>
         <div className="flex justify-center items-center mt-4 gap-2">
           <a href={CV} target="_blank" rel="noopener noreferrer">
-            <button className="text-white p-1 flex items-center gap-2 border border-white rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24"><path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z">
-                </path></svg>
+            <button className="cursor-pointer 
+            hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]
+            hover:border-purple-500 hover:text-purple-500 
+            text-white p-1 flex items-center gap-2 border border-white rounded">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19.903 8.586a.997.997 0 0 0-.196-.293l-6-6a.997.997 0 0 0-.293-.196c-.03-.014-.062-.022-.094-.033a.991.991 0 0 0-.259-.051C13.04 2.011 13.021 2 13 2H6c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V9c0-.021-.011-.04-.013-.062a.952.952 0 0 0-.051-.259c-.01-.032-.019-.063-.033-.093zM16.586 8H14V5.414L16.586 8zM6 20V4h6v5a1 1 0 0 0 1 1h5l.002 10H6z"></path><path d="M8 12h8v2H8zm0 4h8v2H8zm0-8h2v2H8z">
+                </path>
+              </svg>
               Resume
             </button>
           </a>
           <div className="social-link flex m-0">
             {socialLink.map((link) => (
-              <SocialLinkButton key={link.title} href={link.href} className="mx-1">
+              <SocialLinkButton key={link.title} href={link.href} className="mx-1 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]
+">
                 {link.icon}
               </SocialLinkButton>
             ))}
