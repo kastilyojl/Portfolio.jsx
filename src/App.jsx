@@ -39,6 +39,10 @@ function App() {
     );
   };
 
+  useEffect(() => {
+      alert("🚧 This portfolio is still under development!");
+    }, []);
+
   return (
     <div className="min-h-screen bg-black lg:pr-20 lg:pt-20 lg:pl-20 relative">
   <div
@@ -57,7 +61,6 @@ function App() {
       </div>
     </div>
 
-    {/* RIGHT COLUMN */}
     <div className="right p-2 flex flex-col gap-4 overflow-y-hidden">
       <section id="about">
         <Container className="transition duration-300 hover:border-white">
