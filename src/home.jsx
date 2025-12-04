@@ -60,6 +60,7 @@ function Home() {
               Software Developer (Web & Desktop) <br />    
               📍[Place]
             </p>
+            {/* <p className="mt-0.5 text-gray-700">Building smooth web & desktop apps with modern UI.</p> */}
           </div>
         </div>
         <div className="flex justify-center items-center mt-4 gap-2">

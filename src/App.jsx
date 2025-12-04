@@ -51,14 +51,31 @@ function App() {
   >
 
     <div className="left p-2 lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] relative overflow-hidden">
-      <div className="block lg:absolute inset-0">
-        <Spline scene="https://prod.spline.design/dGkl7hReKvdNmjX6/scene.splinecode"/>
-      </div>
-
-      <div className="z-10">
-        <Home />
-        <SideNav className="lg:block absolute bot-0 py-10 px-6 bottom-0" />
-      </div>
+       <section id="header">
+          <Home />
+        </section>
+        <section id="sidebar-nav">
+          <SideNav className="lg:block bot-0 py-10 px-6 bottom-0" />
+        </section>
+        <section 
+          id="robot"
+          className="block lg:absolute bottom-0 left-0 w-full h-[55vh] flex flex-col items-center">
+            <Spline 
+              scene="https://prod.spline.design/dGkl7hReKvdNmjX6/scene.splinecode"
+              className="w-full h-full"
+            />
+          {/* Spline Shadow */}
+          <div className="
+            w-48
+            h-12
+            -mt-22
+            opacity-70
+            pointer-events-none
+            rounded-full
+            blur-xl
+            bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.55)_0%,rgba(147,51,234,0.25)_40%,transparent_75%)]">
+          </div>
+        </section>
     </div>
 
     <div className="right p-2 flex flex-col gap-4 overflow-y-hidden">
