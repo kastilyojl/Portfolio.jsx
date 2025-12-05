@@ -28,7 +28,7 @@ export default function SideNav({className}) {
     }, []);
 
   return (
-    <nav className={`hidden lg:flex flex-col gap-y-4 font-sans ${className}`}>
+    <nav className={`lg:flex flex-col gap-y-4 font-sans ${className}`}>
       {sections.map(({ id, label }) => (
         <a
           key={id}

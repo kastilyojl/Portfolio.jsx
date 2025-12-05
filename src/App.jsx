@@ -68,7 +68,7 @@ function App() {
                   <Contacts/>
               </section>
               <section id="sidebar-nav">
-                <SideNav className="lg:block bot-0 py-10 px-6 bottom-0" />
+                <SideNav className="hidden lg:block bot-0 py-10 px-6 bottom-0" />
               </section>
               <section 
                 id="robot"
@@ -85,6 +85,9 @@ function App() {
               </section>
               <section className="block md:hidden">
                 <Contacts/>
+              </section>
+              <section id="sidebar-nav">
+                <SideNav className="lg:hidden bot-0 space-y-6 py-10 px-6 bottom-0" />
               </section>
           </div>
 

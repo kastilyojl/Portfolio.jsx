@@ -95,6 +95,9 @@ export default function TechStack() {
   ))}
 </ul>
 
+      <p className={` text-gray-400 italic text-xs text-center mt-2 ${showAll == false ? "hidden" : "block"}`}>
+        Disclaimer: This list highlights technologies I’ve used before, not necessarily the ones I’m most confident with..
+      </p>
 
       {/* TOGGLE BUTTONS */}
       <div className="flex flex-wrap justify-center gap-2 text-sm mt-4">
@@ -119,10 +122,6 @@ export default function TechStack() {
           All Technologies
         </button>
       </div>
-
-      <p className="text-gray-400 text-xs text-center mt-2">
-        Disclaimer: This list highlights technologies I’ve used before, not necessarily the ones I’m most confident with..
-      </p>
     </Container>
   );
 }
