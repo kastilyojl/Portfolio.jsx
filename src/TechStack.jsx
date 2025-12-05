@@ -1,157 +1,131 @@
-import React, { useState } from "react";
-import Box from "./components/box";
+import { useState } from "react";
 import Container from "./components/container";
-import visualbasic from "./assets/visualbasic.png";
+
+// Map each technology to SVG icon URLs
+const techIcons = {
+  "React.js": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+  "Laravel": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
+  "PHP": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+  "MySQL": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+  "Tailwind CSS": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+  "Git": "https://images.icon-icons.com/2107/PNG/96/file_type_git_icon_130581.png",
+  ".NET / VB .NET": "https://repository-images.githubusercontent.com/256338499/691efb00-8303-11ea-8c55-ab6bb5e2676a",
+  "RESTful API": "https://cdn-icons-png.flaticon.com/128/15435/15435224.png",
+  "Bootstrap": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
+  "Shadcn UI": "https://th.bing.com/th/id/OIP.beVjRiHFNXgyqzqo1Ra27wAAAA?w=154&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
+  "Flowbite": "https://flowbite.com/docs/images/logo.svg",
+  "Inertia.js": "https://avatars.githubusercontent.com/u/47703742?s=200&v=4",
+  "Google Cloud": "https://images.icon-icons.com/2699/PNG/96/google_cloud_logo_icon_171058.png",
+  "Ngrok": "https://th.bing.com/th/id/OIP.DHaNUAzEr36T3SYMbQKDQgAAAA?w=144&h=150&c=7&r=0&o=7&pid=1.7&rm=3",
+  "Figma": "https://cdn-icons-png.flaticon.com/128/5968/5968705.png",
+  "Tesseract.js (OCR)": "https://raw.githubusercontent.com/naptha/tesseract.js/master/docs/images/tesseract.png",
+  "Java": "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
+  "HTML & CSS": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+};
 
 const allTechnologies = [
-  {
-    title: "React.js",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-  },
-  {
-    title: "PHP",
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
-  },
-  {
-    title: "Laravel",
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
-  },
-  {
-    title: "Java",
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
-  },
-  {
-    title: "VB .Net",
-    image: visualbasic,
-  },
-  {
-    title: "HTML",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
-  },
-  {
-    title: "CSS",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
-  },
-  {
-    title: "Javascript",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-  },
-  {
-    title: "MySQL",
-    image: "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
-  },
-  {
-    title: "Bootstrap",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
-  },
-  {
-    title: "Tailwind CSS",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
-  },
-  {
-    title: "Inertia",
-    image: "https://avatars.githubusercontent.com/u/47703742?s=200&v=4",
-  },
-  {
-    title: "Shadcn UI",
-    image:
-      "https://th.bing.com/th/id/OIP.beVjRiHFNXgyqzqo1Ra27wAAAA?w=154&h=180&c=7&r=0&o=7&pid=1.7&rm=3",
-  },
-  { title: "Flowbite", image: "https://flowbite.com/docs/images/logo.svg" },
-  {
-    title: "Git",
-    image:
-      "https://images.icon-icons.com/2107/PNG/96/file_type_git_icon_130581.png",
-  },
-  {
-    title: "Google Cloud",
-    image:
-      "https://images.icon-icons.com/2699/PNG/96/google_cloud_logo_icon_171058.png",
-  },
-  {
-    title: "RESTful API",
-    image: "https://cdn-icons-png.flaticon.com/128/15435/15435224.png",
-  },
-  {
-    title: "Ngrok",
-    image:
-      "https://th.bing.com/th/id/OIP.DHaNUAzEr36T3SYMbQKDQgAAAA?w=144&h=150&c=7&r=0&o=7&pid=1.7&rm=3",
-  },
-  {
-    title: "Figma",
-    image:
-      "https://cdn-icons-png.flaticon.com/128/5968/5968705.png",
-  },
-  {
-    title: "Tesseract.js",
-    image:
-      "https://raw.githubusercontent.com/naptha/tesseract.js/master/docs/images/tesseract.png",
-  },
+  "React.js",
+  "Laravel",
+  "PHP",
+  "MySQL",
+  "Tailwind CSS",
+  "Git",
+  ".NET / VB .NET",
+  "RESTful API",
+  "Bootstrap",
+  "Shadcn UI",
+  "Flowbite",
+  "Inertia.js",
+  "Google Cloud",
+  "Ngrok",
+  "Figma",
+  "Tesseract.js (OCR)",
+  "Java",
+  "HTML & CSS",
 ];
 
 const mainTechnologies = [
   "React.js",
   "Laravel",
-  "VB .Net",
+  ".NET / VB .NET",
   "Git",
-  "Inertia",
   "RESTful API",
   "Tailwind CSS",
+  "Inertia.js"
 ];
 
 export default function TechStack() {
   const [showAll, setShowAll] = useState(false);
 
-  const displayedTechnologies = showAll
-    ? allTechnologies
-    : allTechnologies.filter((tech) => mainTechnologies.includes(tech.title));
+  const displayedTechnologies = showAll ? allTechnologies : mainTechnologies;
 
   return (
-    <Container className="space-y-4 transition duration-300 hover:border-white">
-      <h3 className="font-medium text-[#9229A8] text-lg">Technologies</h3>
+    <Container className="space-y-6 transition duration-300 hover:border-white/40">
+      {/* TITLE */}
+      <h3 className="text-[#A855F7] text-lg font-semibold uppercase tracking-wide">
+        Technologies
+      </h3>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4 justify-items-center">
-        {displayedTechnologies.map((tech) => (
-          <Box key={tech.title} image={tech.image} title={tech.title} />
-        ))}
-      </div>
+      {/* TECHNOLOGY LIST */}
+      <ul
+  className={`grid gap-3
+    grid-cols-4 sm:grid-cols-4 md:grid-cols-5`}
+>
+  {displayedTechnologies.map((tech) => (
+    <li
+      key={tech}
+      className="flex flex-col items-center gap-1 text-gray-300 hover:text-white transition relative group"
+    >
+      {/* Icon */}
+      <img
+        src={techIcons[tech]}
+        alt={tech}
+        className="w-6 h-6"
+      />
 
-      {showAll && (
-        <div className="text-gray-400 text-xs text-center">
-          Disclaimer: This list includes all the technologies I have worked with
-          in the past. It does not necessarily reflect my current level of
-          proficiency or expertise in each.
-        </div>
-      )}
+      {/* Label */}
+      <span
+        className={`text-xs text-center 
+          ${showAll ? "hidden sm:block" : "block"} 
+        `}
+      >
+        {tech}
+      </span>
+    </li>
+  ))}
+</ul>
 
-      <div className="flex flex-wrap justify-center gap-2 text-sm">
+
+      {/* TOGGLE BUTTONS */}
+      <div className="flex flex-wrap justify-center gap-2 text-sm mt-4">
         <button
           onClick={() => setShowAll(false)}
           className={`px-3 py-1 rounded ${
             !showAll
-              ? "bg-white text-[#101828]"
+              ? "bg-white text-[#101828] drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]"
               : "text-white border border-white/30"
           }`}
         >
-          Main Technologies
+          Main Stack
         </button>
         <button
           onClick={() => setShowAll(true)}
           className={`px-3 py-1 rounded ${
             showAll
-              ? "bg-white text-[#101828]"
+              ? "bg-white text-[#101828] drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]"
               : "text-white border border-white/30"
           }`}
         >
           All Technologies
         </button>
       </div>
+
+      {/* DISCLAIMER */}
+      <p className="text-gray-400 text-xs text-center mt-2">
+        Disclaimer: This list contains all the technologies that I have worked
+        with in the past. Not necessarily the technologies that I am most
+        comfortable with.
+      </p>
     </Container>
   );
 }

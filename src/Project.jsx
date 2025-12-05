@@ -245,7 +245,7 @@ export default function Project({ setShowScreenshots, setCurrentProject }) {
 
   return (
     <Container>
-      <h3 className="font-medium text-[#9229A8] sm:text-lg mb-4">Projects</h3>
+      <h3 className="font-medium uppercase text-[#9229A8] mb-4">Projects</h3>
 
       <div className="space-y-6">
         {projects.map((project, i) => (
