@@ -62,7 +62,7 @@ export default function TechStack() {
   return (
     <Container className="space-y-6 transition duration-300 hover:border-white/40">
       {/* TITLE */}
-      <h3 className="text-[#A855F7] text-lg font-semibold uppercase tracking-wide">
+      <h3 className="text-[#9229A8] font-medium uppercase tracking-wide">
         Technologies
       </h3>
 
@@ -120,11 +120,8 @@ export default function TechStack() {
         </button>
       </div>
 
-      {/* DISCLAIMER */}
       <p className="text-gray-400 text-xs text-center mt-2">
-        Disclaimer: This list contains all the technologies that I have worked
-        with in the past. Not necessarily the technologies that I am most
-        comfortable with.
+        Disclaimer: This list highlights technologies I’ve used before, not necessarily the ones I’m most confident with..
       </p>
     </Container>
   );

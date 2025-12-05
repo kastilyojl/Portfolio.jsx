@@ -5,6 +5,7 @@ import TechStack from "./TechStack";
 import Container from "./components/container";
 import SideNav from "./components/sideNav";
 import Spline from "@splinetool/react-spline";
+import ProjectModal from "./components/ProjectModal";
 
 function App() {
   const [showScreenshots, setShowScreenshots] = useState(false);
@@ -38,9 +39,18 @@ function App() {
     );
   };
 
-  useEffect(() => {
-      alert("🚧 This portfolio is still under development!");
-    }, []);
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = (project) => {
+  setCurrentProject(project);
+  setCurrentIndex(0);
+  setModalOpen(true);
+};
+
+
+
+  // useEffect(() => {
+  //     alert("🚧 This portfolio is still under development!");
+  //   }, []);
 
   return (
     <div className="min-h-screen bg-black lg:pr-20 lg:pt-20 lg:pl-20 relative">
@@ -86,80 +96,23 @@ function App() {
               <TechStack />
             </section>
             <section id="projects">
-              <Project setShowScreenshots={setShowScreenshots} setCurrentProject={setCurrentProject} />
+              <Project openModal={openModal} />
+
             </section>
           </div>
         </div>
-    
-        {/* Modal */}
-        {showScreenshots && currentProject && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <Container className="relative bg-black p-6 rounded shadow-lg w-[90%] max-w-3xl">
-              <button
-                onClick={() => setShowScreenshots(false)}
-                className="absolute top-2 right-2 text-white font-bold cursor-pointer"
-              >
-                X
-              </button>
 
-              <h3 className="text-lg font-bold mb-4 text-white">{currentProject.title}</h3>
+        {modalOpen && currentProject && (
+  <ProjectModal
+    project={currentProject}
+    onClose={() => setModalOpen(false)}
+  />
+)}
 
-              {/* Carousel */}
-              <div className="relative">
-                <img
-                  src={
-                    currentProject.screenshots
-                      ? currentProject.screenshots[currentIndex]
-                      : currentProject.image
-                  }
-                  alt={`${currentProject.title} screenshot`}
-                  className="w-full max-h-96 object-contain rounded mx-auto"
-                />
-
-                {currentProject.screenshots && currentProject.screenshots.length > 1 && (
-                  <>
-                    <button
-                      onClick={prevImage}
-                      className="absolute top-1/2 -left-6 transform -translate-y-1/2 bg-white text-black p-1 rounded cursor-pointer"
-                    >
-                      &#8592;
-                    </button>
-                    <button
-                      onClick={nextImage}
-                      className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-white text-black p-1 rounded cursor-pointer"
-                    >
-                      &#8594;
-                    </button>
-                  </>
-                )}
-              </div>
-
-              <div onClick={toggleDetails} className="cursor-pointer">
-                <span className="text-blue-400">
-                  {showDetails ? "Hide Details" : "Show Details"}
-                </span>
-
-                {showDetails && (
-                  <p className="mt-2 text-gray-300">{currentProject.description}</p>
-                )}
-              </div>
-
-
-              {/* Google Drive Link */}
-              {currentProject.driveLink && (
-                <a
-                  href={currentProject.driveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block text-blue-500 underline"
-                >
-                  View All Screenshots
-                </a>
-              )}
-            </Container>
-          </div>
-        )}
+  
     </div>
+
+    
   );
 }
 

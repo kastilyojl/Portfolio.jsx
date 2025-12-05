@@ -10,8 +10,10 @@ import RBAC from "./assets/enrollment_v2/rbac.png";
 import Dashboard from "./assets/enrollment_v2/dashboard.png";
 import AuditTrail from "./assets/enrollment_v2/audit_trail.png";
 import UserManagement from "./assets/enrollment_v2/user_management.png";
+import ProjectModal from "./components/ProjectModal"
 
-export default function Project({ setShowScreenshots, setCurrentProject }) {
+export default function Project({openModal}) {
+
   useEffect(() => {
     if (window.AOS) {
       window.AOS.init({ duration: 800, once: true });
@@ -237,102 +239,120 @@ export default function Project({ setShowScreenshots, setCurrentProject }) {
       ],
     },
   ];
-
-   const openScreenshots = (project) => {
-    setCurrentProject(project);
-    setShowScreenshots(true);
-  };
-
+  
   return (
-    <Container>
-      <h3 className="font-medium uppercase text-[#9229A8] mb-4">Projects</h3>
+  <Container>
+    <h3 className="font-medium uppercase text-[#9229A8] mb-6 text-lg">
+      Projects
+    </h3>
 
-      <div className="space-y-6">
-        {projects.map((project, i) => (
-          <div
-            data-aos="zoom-in-up"
-            key={i}
-            className="flex flex-col md:flex-row items-start gap-4 border border-white/10 p-2 rounded transition duration-300 hover:border-white"
-          >
-            <img
-              alt={project.title}
-              src={project.image}
-              className="w-full md:w-60 h-36 rounded object-cover"
-            />
+    <div className="space-y-8">
+      {projects.map((project, i) => (
+        <div
+          key={i}
+          data-aos="zoom-in-up"
+          className="flex flex-col gap-4 p-4 rounded-xl border border-white/10 bg-black/10 backdrop-blur-[1px] hover:bg-white/4 hover:backdrop-blur-[4px] transition duration-300"
+        >
+          {/* Project Title */}
+          <h4 className="text-white text-lg font-semibold">{project.title}</h4>
 
-            <div className="flex-1">
-              <h3 className="font-medium text-white sm:text-lg">
-                {project.title}
-              </h3>
-              <p className="mt-1 text-gray-400">{project.description}</p>
+          {/* Description */}
+          <p className="text-gray-400">{project.description}</p>
 
-                {/* Links */}
-                {project.links && (
-                <div className="flex flex-col gap-2 mt-2">
-                  {project.links.map((link, j) => (
-                    <a
-                      key={j}
-                      href={
-                        link.name === "Repository Link (Private)" || 
-                        link.name === "System Screenshots"
-                          ? "#"
-                          : link.url
-                      }
-                      target={
-                        link.name === "Repository Link (Private)" || 
-                        link.name === "System Screenshots"
-                          ? ""
-                          : "_blank"
-                      }
-                      rel="noopener noreferrer"
-                      onClick={(e) => {
-                        if (link.name === "System Screenshots") {
-                          e.preventDefault();
-                          openScreenshots(project);
-                        }
-                        if (link.name === "Repository Link (Private)") {
-                          e.preventDefault();
-                          alert("This repository is private. Please contact me for access.");
-                        }
-                      }}
-                      className="flex items-center gap-2 cursor-pointer"
-                    >
-                      <img
-                        src={link.icon}
-                        alt={link.name}
-                        className="w-5 h-5 hover:opacity-80"
-                      />
-                      <span className="text-white text-xs">{link.name}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {/* Technologies */}
-              {project.technologies && (
-                <div className="flex flex-wrap gap-2 mt-3">
-                  {project.technologies.map((tech, j) => (
+          {/* Images */}
+          {project.screenshots || project.image ? (
+            <div className="grid grid-cols-4 gap-2 mt-2">
+              {(project.screenshots || [project.image])
+                .slice(0, 4)
+                .map((img, idx, arr) => {
+                  const isLastVisible =
+                    idx === 3 && (project.screenshots || [project.image]).length > 4;
+                  return (
                     <div
-                      key={j}
-                      className="inline-flex items-center gap-1 bg-white/10 rounded px-2 py-1"
+                      key={idx}
+                      className="relative cursor-pointer"
+                      onClick={() => openModal(project)}
                     >
                       <img
-                        src={tech.icon}
-                        alt={tech.name}
-                        title={tech.name}
-                        className="w-4 h-4"
+                        src={img}
+                        alt={`${project.title} screenshot ${idx + 1}`}
+                        className="w-full h-24 object-cover rounded-lg"
                       />
-                      <span className="text-[10px] text-gray-300">
-                        {tech.name}
-                      </span>
+                      {isLastVisible && (
+                        <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white font-bold text-lg rounded-lg">
+                          +{(project.screenshots || []).length - 4} more
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
-              )}
+                  );
+                })}
             </div>
+          ) : null}
+
+          {/* Built With */}
+          {project.technologies && (
+            <div className="mt-3">
+              <p className="text-gray-400 font-medium mb-2">Built with</p>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, j) => (
+                  <div
+                    key={j}
+                    className="flex items-center gap-1 px-2 py-1 rounded bg-[#101010] hover:bg-[#A855F7]/20 transition"
+                  >
+                    <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
+                    <span className="hidden sm:inline text-[10px] text-gray-400">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Links */}
+{project.links && (
+  <div className="mt-3">
+    <p className="text-gray-400 font-medium mb-2">Links</p>
+    <div className="flex  flex-wrap gap-3">
+      {project.links.map((link, j) => (
+        <a
+          key={j}
+          href={link.url || "#"}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-[#A855F7] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)] text-sm transition flex items-center gap-1"
+        >
+          {link.icon && (
+            <img
+              src={link.icon}
+              alt={link.name}
+              className="w-4 h-4 object-contain" // small and inline with text
+            />
+          )}
+          {link.name}
+        </a>
+      ))}
+    </div>
+  </div>
+)}
+
+
+          {/* View Details Button */}
+          <div className="mt-4">
+            <button
+              onClick={() => openModal(project)}
+              className="w-full px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-500 transition "
+            >
+              View Details
+            </button>
           </div>
-        ))}
-      </div>
-    </Container>
-  );
-}
+        </div>
+      ))}
+    </div>
+
+    {/* Disclaimer */}
+    <p className="mt-6 text-gray-400 text-xs text-center">
+      Disclaimer: Some projects include private repositories or limited-access demos.
+    </p>
+  </Container>
+)};
