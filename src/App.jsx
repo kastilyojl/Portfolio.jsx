@@ -87,8 +87,8 @@ function App() {
                 <h3 className="font-medium text-[#9229A8] uppercase">About Me</h3>
                 <ul className="mt-2 text-gray-400 list-disc list-inside space-y-1">
                   <li className="hover:marker:text-purple-500">Full-stack web development with <span className="font-semibold text-white">Laravel, React, and MySQL</span></li>
-                  <li className=" hover:marker:text-purple-500">Windows desktop apps using <span className="font-semibold text-white">.NET Windows Forms</span></li>
-                  <li className=" hover:marker:text-purple-500">Building <span className="font-semibold text-white">responsive, interactive user interfaces</span></li>
+                  <li className="hover:marker:text-purple-500">Windows desktop apps using <span className="font-semibold text-white">.NET Windows Forms</span></li>
+                  <li className="hover:marker:text-purple-500">Building <span className="font-semibold text-white">responsive, interactive user interfaces</span></li>
                   </ul>
               </Container>
             </section>

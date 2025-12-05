@@ -251,10 +251,10 @@ export default function Project({openModal}) {
         <div
           key={i}
           data-aos="zoom-in-up"
-          className="flex flex-col gap-4 p-4 rounded-xl border border-white/10 bg-black/10 backdrop-blur-[1px] hover:bg-white/4 hover:backdrop-blur-[4px] transition duration-300"
+          className="flex flex-col gap-4 md:p-4 rounded-xl border bg-black/10 backdrop-blur-[1px] hover:bg-white/4 hover:backdrop-blur-[4px] transition duration-300"
         >
           {/* Project Title */}
-          <h4 className="text-white text-lg font-semibold">{project.title}</h4>
+          <h4 className="text-white text-md font-medium">{project.title}</h4>
 
           {/* Description */}
           <p className="text-gray-400">{project.description}</p>
@@ -276,7 +276,7 @@ export default function Project({openModal}) {
                       <img
                         src={img}
                         alt={`${project.title} screenshot ${idx + 1}`}
-                        className="w-full h-24 object-cover rounded-lg"
+                        className="w-full h-12 sm:h-16 md:h-20 object-cover rounded-lg"
                       />
                       {isLastVisible && (
                         <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white font-bold text-lg rounded-lg">
@@ -289,38 +289,18 @@ export default function Project({openModal}) {
             </div>
           ) : null}
 
-          {/* Built With */}
-          {project.technologies && (
-            <div className="mt-3">
-              <p className="text-gray-400 font-medium mb-2">Built with</p>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, j) => (
-                  <div
-                    key={j}
-                    className="flex items-center gap-1 px-2 py-1 rounded bg-[#101010] hover:bg-[#A855F7]/20 transition"
-                  >
-                    <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
-                    <span className="hidden sm:inline text-[10px] text-gray-400">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           {/* Links */}
 {project.links && (
-  <div className="mt-3">
-    <p className="text-gray-400 font-medium mb-2">Links</p>
-    <div className="flex  flex-wrap gap-3">
+  <div className="mt-1">
+  
+    <div className="flex flex-col flex-wrap gap-3">
       {project.links.map((link, j) => (
         <a
           key={j}
           href={link.url || "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-400 hover:text-[#A855F7] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)] text-sm transition flex items-center gap-1"
+          className="text-gray-400 hover:text-[#A855F7] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)] text-[11px] transition flex items-center gap-1"
         >
           {link.icon && (
             <img
@@ -337,11 +317,31 @@ export default function Project({openModal}) {
 )}
 
 
+          {/* Built With */}
+          {project.technologies && (
+            <div className="mt-1">
+   
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, j) => (
+                  <div
+                    key={j}
+                    className="flex items-center gap-1 px-2 py-1 rounded bg-[#101010] hover:bg-[#A855F7]/20 transition"
+                  >
+                    <img src={tech.icon} alt={tech.name} className="w-4 h-4" />
+                    <span className="text-sm text-gray-400">
+                      {tech.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* View Details Button */}
-          <div className="mt-4">
+          <div className="mt-1">
             <button
               onClick={() => openModal(project)}
-              className="w-full px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-500 transition "
+              className="w-full px-4 py-1 sm:py-2 text-sm md:text-md text-white bg-purple-600 rounded-lg hover:bg-purple-500 transition "
             >
               View Details
             </button>

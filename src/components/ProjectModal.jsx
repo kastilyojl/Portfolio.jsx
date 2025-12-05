@@ -26,7 +26,7 @@ export default function ProjectModal({ project, onClose }) {
 
       {/* Modal Container */}
       <div className="
-        relative w-[95%] max-w-[1000px] max-h-[90vh] overflow-y-auto rounded-2xl
+        relative w-[95%] max-w-[1000px] max-h-[90vh] overflow-y-auto sm:rounded-2xl
         bg-[#101010] backdrop-blur-xl border border-white/10 shadow-2xl
         flex flex-col
       ">
@@ -92,7 +92,7 @@ export default function ProjectModal({ project, onClose }) {
           {/* Centered Thumbnails */}
 {screenshots.length > 1 && (
   <div className="flex gap-3 mt-4 justify-center px-2 pb-4 
-                  overflow-x-hidden">
+                  overflow-x-auto">
     {screenshots.map((img, idx) => (
       <img
         key={idx}
@@ -116,13 +116,13 @@ export default function ProjectModal({ project, onClose }) {
         <div className="flex flex-col lg:flex-row px-6 pb-6 gap-6">
 
           {/* Left: Description */}
-          <div className="lg:w-1/2 bg-[#0B0B0B] border border-white/10 rounded p-4">
+          <div className="lg:w-1/2 bg-[#0B0B0B] rounded p-4">
             <h3 className="text-white font-medium mb-2 uppercase">About this project</h3>
-            <p className="text-gray-400 text-md leading-relaxed">{project.description}</p>
+            <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
           </div>
 
           {/* Right: Technologies + Links */}
-          <div className="lg:w-1/2 flex flex-col gap-4 bg-[#0B0B0B] border border-white/10 rounded p-4">
+          <div className="lg:w-1/2 flex flex-col gap-4 bg-[#0B0B0B] rounded p-4">
 
             {/* Technologies */}
             {project.technologies && (
