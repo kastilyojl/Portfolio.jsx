@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Container from "./components/container";
+import Container from "./components/Container";
 
-// Map each technology to SVG icon URLs
 const techIcons = {
   "React.js": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   "Laravel": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
@@ -61,45 +60,41 @@ export default function TechStack() {
 
   return (
     <Container className="space-y-6 transition duration-300 hover:border-white/40">
-      {/* TITLE */}
+ 
       <h3 className="text-[#9229A8] font-medium uppercase tracking-wide">
         Technologies
       </h3>
 
       {/* TECHNOLOGY LIST */}
       <ul
-  className={`grid gap-3
-    grid-cols-4 sm:grid-cols-4 md:grid-cols-5`}
->
-  {displayedTechnologies.map((tech) => (
-    <li
-      key={tech}
-      className="flex flex-col items-center gap-1 text-gray-300 hover:text-white transition relative group"
-    >
-      {/* Icon */}
-      <img
-        src={techIcons[tech]}
-        alt={tech}
-        className="w-6 h-6"
-      />
-
-      {/* Label */}
-      <span
-        className={`text-xs text-center 
-          ${showAll ? "hidden sm:block" : "block"} 
-        `}
+        className={`grid gap-3
+          grid-cols-4 sm:grid-cols-4 md:grid-cols-5`}
       >
-        {tech}
-      </span>
-    </li>
-  ))}
-</ul>
+        {displayedTechnologies.map((tech) => (
+          <li
+            key={tech}
+            className="flex flex-col items-center gap-1 text-gray-300 hover:text-white transition relative group"
+          >
+            <img
+              src={techIcons[tech]}
+              alt={tech}
+              className="w-6 h-6"
+            />
+            <span
+              className={`text-xs text-center 
+                ${showAll ? "hidden sm:block" : "block"} 
+              `}
+            >
+              {tech}
+            </span>
+          </li>
+        ))}
+      </ul>
 
       <p className={` text-gray-400 italic text-xs text-center mt-2 ${showAll == false ? "hidden" : "block"}`}>
         Disclaimer: This list highlights technologies I’ve used before, not necessarily the ones I’m most confident with..
       </p>
 
-      {/* TOGGLE BUTTONS */}
       <div className="flex flex-wrap justify-center gap-2 text-sm mt-4">
         <button
           onClick={() => setShowAll(false)}

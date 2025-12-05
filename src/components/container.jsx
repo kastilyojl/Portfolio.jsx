@@ -1,6 +1,6 @@
 import React from "react";
 
-function container({ children, className }) {
+function Container({ children, className }) {
   return (
     <div
       className={`rounded-lg p-4 shadow-lg ${className}`}
@@ -10,4 +10,4 @@ function container({ children, className }) {
   );
 }
 
-export default container;
+export default Container;

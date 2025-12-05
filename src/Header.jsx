@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Container from "./components/container";
-import CV from "./assets/John_Lester_Castillo_LatestCV.pdf";
+import Container from "./components/Container";
 import profile_pic from "./assets/profile_pic.png";
-import SocialLinkButton from "./components/socialLinkButton";
 
-function Home() {
+function Header() {
 
   return (
     <div className="grid grid-cols-1 gap-10">
@@ -20,11 +17,6 @@ function Home() {
                bg-clip-text bg-gradient-to-r from-orange-500 to-pink-500">
             John Lester Castillo
           </h1>
-
-            {/* <p className="mt-0.5 text-gray-400">
-              Software Developer (Web & Desktop) <br />    
-              📍Laguna, Philippines
-            </p> */}
             <p className="mt-0.5 text-gray-400">Building smooth web & desktop apps with modern UI.</p>
           </div>
         </div>
@@ -34,4 +26,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Header;

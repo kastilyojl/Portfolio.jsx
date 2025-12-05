@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialLinkButton from './socialLinkButton'
+import SocialLinkButton from './SocialLinkButton'
 import CV from "../assets/John_Lester_Castillo_LatestCV.pdf"
 
 function Contacts () {

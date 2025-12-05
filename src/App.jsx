@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Home from "./home";
+import Header from "./Header";
 import Project from "./Project";
 import TechStack from "./TechStack";
-import Container from "./components/container";
-import SideNav from "./components/sideNav";
+import Container from "./components/Container";
+import SideNav from "./components/SideNav";
 import Spline from "@splinetool/react-spline";
 import ProjectModal from "./components/ProjectModal";
 import Contacts from "./components/Contacts";
+import RobotHint from "./components/RobotHint";
 
 function App() {
-  const [showScreenshots, setShowScreenshots] = useState(false);
   const [currentProject, setCurrentProject] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
     if (window.AOS) {
@@ -20,38 +19,13 @@ function App() {
     }
   }, []);
 
-  const toggleDetails = () => {
-    setShowDetails((prev) => !prev);
-  };
-
-  const nextImage = () => {
-    if (!currentProject) return;
-    setCurrentIndex((prev) =>
-      prev === (currentProject.screenshots?.length || 1) - 1 ? 0 : prev + 1
-    );
-  };
-
-  const prevImage = () => {
-    if (!currentProject) return;
-    setCurrentIndex((prev) =>
-      prev === 0
-        ? (currentProject.screenshots?.length || 1) - 1
-        : prev - 1
-    );
-  };
-
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = (project) => {
   setCurrentProject(project);
   setCurrentIndex(0);
   setModalOpen(true);
-};
+  };
 
-
-
-  // useEffect(() => {
-  //     alert("🚧 This portfolio is still under development!");
-  //   }, []);
 
   return (
     <div className="min-h-screen pt-10 bg-black lg:pr-20 lg:pt-20 lg:pl-20 relative">
@@ -62,7 +36,7 @@ function App() {
 
           <div className="left p-2 lg:sticky lg:top-20 lg:h-[calc(100vh-5rem)] relative overflow-hidden">
             <section id="header">
-                <Home />
+                <Header />
               </section>
                <section className="hidden md:block">
                   <Contacts/>
@@ -83,6 +57,7 @@ function App() {
                   bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.55)_0%,rgba(147,51,234,0.25)_40%,transparent_75%)]">
                 </div>
               </section>
+              <RobotHint className="hidden md:block"/>
               <section className="block md:hidden">
                 <Contacts/>
               </section>
@@ -113,11 +88,11 @@ function App() {
         </div>
 
         {modalOpen && currentProject && (
-  <ProjectModal
-    project={currentProject}
-    onClose={() => setModalOpen(false)}
-  />
-)}
+          <ProjectModal
+            project={currentProject}
+            onClose={() => setModalOpen(false)}
+          />
+        )}
 
   
     </div>

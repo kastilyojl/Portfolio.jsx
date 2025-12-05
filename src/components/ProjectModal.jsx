@@ -28,31 +28,24 @@ export default function ProjectModal({ project, onClose }) {
       <div className="
         relative w-[95%] max-w-[1000px] max-h-[90vh] overflow-y-auto sm:rounded-2xl
         bg-[#101010] backdrop-blur-xl border border-white/10 shadow-2xl
-        flex flex-col
-      ">
+        flex flex-col">
 
-        {/* Sticky Header */}
         <header className="
           sticky top-0 z-10 flex items-center justify-between px-6 py-1
-          bg-black/60 backdrop-blur-md border-b border-purple-700/40
-        ">
+          bg-black/60 backdrop-blur-md border-b border-purple-700/40">
           <h2 className="text-[#A855F7] text-lg font-semibold">{project.title}</h2>
-
-         <button
-  onClick={onClose}
-  className="
-    text-gray-500 text-3xl font-light
-    cursor-pointer
-    rounded-full
-    flex items-center justify-center
-    hover:text-white
-    transform duration-75
-    hover:scale-110
-  "
->
-  &times;
-</button>
-
+          <button
+              onClick={onClose}
+              className="
+                text-gray-500 text-3xl font-light
+                cursor-pointer
+                rounded-full
+                flex items-center justify-center
+                hover:text-white
+                transform duration-75
+                hover:scale-110">
+              &times;
+            </button>
         </header>
 
         {/* Main Image Preview */}
@@ -69,48 +62,40 @@ export default function ProjectModal({ project, onClose }) {
                 onClick={handlePrev}
                 className="
                   absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl
-                  px-3 hover:text-purple-500 cursor-pointer
-                "
-              >
+                  px-3 hover:text-purple-500 cursor-pointer">
                 &#10094;
               </button>
-
               <button
                 onClick={handleNext}
                 className="
                   absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl
-                  px-3 hover:text-purple-500 cursor-pointer
-                "
-              >
+                  px-3 hover:text-purple-500 cursor-pointer">
                 &#10095;
               </button>
             </>
           )}
 
           {/* Centered Thumbnails */}
-{screenshots.length > 1 && (
-  <div className="flex gap-3 mt-4 justify-center px-2 pb-4 
-                  overflow-x-auto">
-    {screenshots.map((img, idx) => (
-      <img
-        key={idx}
-        src={img}
-        onClick={() => setCurrentIndex(idx)}
-        className={`
-         w-18 h-12 md:h-16 object-cover rounded-lg cursor-pointer
-          transition-all border
-          ${idx === currentIndex
-            ? "border-purple-500 drop-shadow-[0_0_2px_rgba(168,85,247,0.7)] shadow-lg"
-            : "border-transparent opacity-70 hover:opacity-100"}
-        `}
-      />
-    ))}
-  </div>
-)}
-
+          {screenshots.length > 1 && (
+            <div className="flex gap-3 mt-4 justify-center px-2 pb-4 
+                            overflow-x-auto">
+              {screenshots.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`
+                  w-18 h-12 md:h-16 object-cover rounded-lg cursor-pointer
+                    transition-all border
+                    ${idx === currentIndex
+                      ? "border-purple-500 drop-shadow-[0_0_2px_rgba(168,85,247,0.7)] shadow-lg"
+                      : "border-transparent opacity-70 hover:opacity-100"}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
-        {/* Content Section (Left/Right) */}
         <div className="flex flex-col lg:flex-row px-6 pb-6 gap-6">
 
           {/* Left: Description */}
@@ -130,8 +115,7 @@ export default function ProjectModal({ project, onClose }) {
                   {project.technologies.map((tech, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-1 px-2 py-1 rounded bg-[#101010] hover:bg-purple-700/20 transition"
-                    >
+                      className="flex items-center gap-1 px-2 py-1 rounded bg-[#101010] hover:bg-purple-700/20 transition">
                       <img src={tech.icon} className="w-4 h-4" />
                       <span className="text-[11px] text-gray-200">{tech.name}</span>
                     </div>
@@ -153,9 +137,7 @@ export default function ProjectModal({ project, onClose }) {
                       rel="noopener noreferrer"
                       className="
                         flex items-center gap-2 px-3 py-1 rounded bg-[#101010]
-                        text-white hover:bg-[#A855F7]/30 transition shadow
-                      "
-                    >
+                        text-white hover:bg-[#A855F7]/30 transition shadow">
                       <img src={link.icon} className="w-4 h-4" />
                       <span className="text-[11px]">{link.name}</span>
                     </a>
@@ -163,10 +145,8 @@ export default function ProjectModal({ project, onClose }) {
                 </div>
               </div>
             )}
-
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -1,16 +1,26 @@
-import React, { useEffect, useState } from "react";
-import Container from "./components/container";
-import Portfolio from "./assets/portfolio.png";
-import Enrollment2023 from "./assets/enrollment2023.png";
-import Enrollment2025 from "./assets/Enrollment2025.png";
-import codingChallenge from "./assets/codingChallenge.png";
-import Portfolio2025 from "./assets/portfolio2025.png";
-import OCR from "./assets/enrollment_v2/ocr.png";
-import RBAC from "./assets/enrollment_v2/rbac.png";
-import Dashboard from "./assets/enrollment_v2/dashboard.png";
-import AuditTrail from "./assets/enrollment_v2/audit_trail.png";
-import UserManagement from "./assets/enrollment_v2/user_management.png";
-import ProjectModal from "./components/ProjectModal"
+import React, { useEffect } from "react";
+import Container from "./components/Container";
+import CodingChallenge from "./assets/project_images/coding_challenge/HeroPage.png";
+import EnrollmentV2 from "./assets/project_images/enrollment_v2/HeroPage.png";
+import OCR from "./assets/project_images/enrollment_v2/OCR.png";
+import RBAC from "./assets/project_images/enrollment_v2/RBAC.png";
+import Dashboard from "./assets/project_images/enrollment_v2/Dashboard.png";
+import AuditTrail from "./assets/project_images/enrollment_v2/AuditTrail.png";
+import UserManagement from "./assets/project_images/enrollment_v2/UserManagement.png";
+import PortfolioV2 from "./assets/project_images/portfolio_v2/HeroPage.png";
+import ProjectPage from "./assets/project_images/portfolio_v2/ProjectPage.png";
+import MobileViewHeroPage from "./assets/project_images/portfolio_v2/MobileViewHeroPage.png";
+import DekstopViewProjectModal from "./assets/project_images/portfolio_v2/DesktopViewProjectModal.png";
+import MobileViewProjectModal from "./assets/project_images/portfolio_v2/MobileViewProjectModal.png";
+import EnrollmentV1 from "./assets/project_images/enrollment_v1/HeroPage.png";
+import LoginEV1 from "./assets/project_images/enrollment_v1/Login.png";
+import PaymentFormV1 from "./assets/project_images/enrollment_v1/PaymentForm.png";
+import ProcedureV1 from "./assets/project_images/enrollment_v1/Procedure.png";
+import RegFormV1 from "./assets/project_images/enrollment_v1/RegistrationForm.png";
+import PortfolioV1 from "./assets/project_images/portfolio_v1/HeroPage.png";
+import ProjectPageV1 from "./assets/project_images/portfolio_v1/ProjectPage.png";
+import AboutPageV1 from "./assets/project_images/portfolio_v1/AboutPage.png";
+import ContactPageV1 from "./assets/project_images/portfolio_v1/ContactPage.png";
 
 export default function Project({openModal}) {
 
@@ -23,9 +33,16 @@ export default function Project({openModal}) {
   const projects = [
     {
       title: "Portfolio v2",
-      image: Portfolio2025,
+      image: PortfolioV2,
+      screenshots: [
+        PortfolioV2,
+        ProjectPage,
+        MobileViewHeroPage,
+        DekstopViewProjectModal,
+        MobileViewProjectModal
+      ],
       description:
-        "This is my second portfolio website. A static website built using React.js and Tailwind CSS to showcase my projects and skills.",
+        "My second portfolio website, built as a static site using React.js and Tailwind CSS. It showcases my projects and skills in a modern, responsive, and interactive layout.",
       links: [
         {
           name: "Repository Link",
@@ -43,18 +60,21 @@ export default function Project({openModal}) {
           name: "React JS",
           icon: "https://cdn-icons-png.flaticon.com/128/1126/1126012.png",
         },
-
         {
           name: "Tailwind",
           icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+        },
+        {
+          name: "Spline (3d asset integration)",
+          icon: "https://spline.design/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fspline_logo.54f4e584.png&w=64&q=75",
         },
       ],
     },
     {
       title: "Enrollment System v2",
-      image: Enrollment2025,
+      image: EnrollmentV2,
       screenshots: [
-        Enrollment2025,
+        EnrollmentV2,
         OCR,
         RBAC,
         AuditTrail,
@@ -63,7 +83,7 @@ export default function Project({openModal}) {
       ],
       driveLink: "https://drive.google.com/drive/folders/1SRunYskfypoo1ORxM8z2fQwC1vNDciyr?usp=sharing",
       description:
-        "Thesis project featuring an Enrollment System with OCR integration for scanning registration forms, data analysis using the XGBoost algorithm, and Role-Based Access Control (RBAC) for secure user access management. The system supports five user roles: Super Admin, Registrar, Accounting, Professor, and Student.",
+        "An Enrollment System featuring OCR for scanning registration forms, XGBoost for data analysis, and Role-Based Access Control (RBAC) to manage secure access for five user roles — Super Admin, Registrar, Accounting, Professor, and Student.",
       links: [
         {
           name: "Key Process Demo",
@@ -114,9 +134,9 @@ export default function Project({openModal}) {
     },
     {
       title: "Coding Challenge",
-      image: codingChallenge,
+      image: CodingChallenge,
       description:
-        "This project was developed as part of my internship application exam. It includes login, registration, and a homepage. The frontend communicates with the backend through APIs, secured using JSON Web Token (JWT) authentication.",
+        "A web application featuring secure login, registration, and a homepage. The frontend interacts with the backend via RESTful APIs, with authentication and authorization handled using JSON Web Tokens (JWT).",
       links: [
         {
           name: "Project Demo",
@@ -159,9 +179,15 @@ export default function Project({openModal}) {
     },
     {
       title: "Portfolio v1",
-      image: Portfolio,
+      image: PortfolioV1,
+      screenshots: [
+        PortfolioV1,
+        ProjectPageV1,
+        AboutPageV1,
+        ContactPageV1,
+      ],
       description:
-        "This is my first portfolio website. A static website built using HTML, CSS, Javascript and Bootstrap to showcase my projects and skills.",
+        "My first portfolio website, built as a static site using HTML, CSS, JavaScript, and Bootstrap. It showcases my projects, skills, and personal work in a clean and interactive layout.",
       links: [
         {
           name: "Repository Link",
@@ -195,9 +221,16 @@ export default function Project({openModal}) {
     },
     {
       title: "Enrollment System v1",
-      image: Enrollment2023,
+      image: EnrollmentV1,
+      screenshots: [
+        EnrollmentV1,
+        LoginEV1,
+        PaymentFormV1,
+        ProcedureV1,
+        RegFormV1
+      ],
       description:
-        "Developed a proposed Enrollment System for our Software Engineering course, integrating a Decision Tree algorithm to predict student eligibility for enrollment based on their academic performance and records.",
+        "Proposed and developed an Enrollment System for a Software Engineering course, integrating a Decision Tree algorithm to predict student eligibility based on academic records and performance. The system helps streamline enrollment decisions and demonstrates predictive modeling in a practical application.",
       links: [
         {
           name: "Key Process Demo",
@@ -253,13 +286,8 @@ export default function Project({openModal}) {
           data-aos="zoom-in-up"
           className="flex flex-col gap-4 md:p-4 rounded-xl border bg-black/10 backdrop-blur-[1px] hover:bg-white/4 hover:backdrop-blur-[4px] transition duration-300"
         >
-          {/* Project Title */}
           <h4 className="text-white text-md font-medium">{project.title}</h4>
-
-          {/* Description */}
           <p className="text-gray-400">{project.description}</p>
-
-          {/* Images */}
           {project.screenshots || project.image ? (
             <div className="grid grid-cols-4 gap-2 mt-2">
               {(project.screenshots || [project.image])
@@ -290,31 +318,31 @@ export default function Project({openModal}) {
           ) : null}
 
           {/* Links */}
-{project.links && (
-  <div className="mt-1">
-  
-    <div className="flex flex-col flex-wrap gap-3">
-      {project.links.map((link, j) => (
-        <a
-          key={j}
-          href={link.url || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-[#A855F7] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)] text-[11px] transition flex items-center gap-1"
-        >
-          {link.icon && (
-            <img
-              src={link.icon}
-              alt={link.name}
-              className="w-4 h-4 object-contain" // small and inline with text
-            />
+          {project.links && (
+            <div className="mt-1">
+            
+              <div className="flex flex-col flex-wrap gap-3">
+                {project.links.map((link, j) => (
+                  <a
+                    key={j}
+                    href={link.url || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-[#A855F7] hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.7)] text-[11px] transition flex items-center gap-1"
+                  >
+                    {link.icon && (
+                      <img
+                        src={link.icon}
+                        alt={link.name}
+                        className="w-4 h-4 object-contain" // small and inline with text
+                      />
+                    )}
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </div>
           )}
-          {link.name}
-        </a>
-      ))}
-    </div>
-  </div>
-)}
 
 
           {/* Built With */}
@@ -350,8 +378,7 @@ export default function Project({openModal}) {
       ))}
     </div>
 
-    {/* Disclaimer */}
-    <p className="mt-6 text-gray-400 text-xs text-center">
+    <p className="mt-6 text-gray-400 text-xs text-center italic">
       Disclaimer: Some projects include private repositories or limited-access demos.
     </p>
   </Container>
