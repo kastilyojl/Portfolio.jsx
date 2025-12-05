@@ -69,8 +69,7 @@ export default function ProjectModal({ project, onClose }) {
                 onClick={handlePrev}
                 className="
                   absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl
-                  bg-black/50 hover:bg-black/70 rounded-full px-3 py-1
-                  transition shadow-lg
+                  px-3 hover:text-purple-500 cursor-pointer
                 "
               >
                 &#10094;
@@ -80,8 +79,7 @@ export default function ProjectModal({ project, onClose }) {
                 onClick={handleNext}
                 className="
                   absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl
-                  bg-black/50 hover:bg-black/70 rounded-full px-3 py-1
-                  transition shadow-lg
+                  px-3 hover:text-purple-500 cursor-pointer
                 "
               >
                 &#10095;
@@ -99,10 +97,10 @@ export default function ProjectModal({ project, onClose }) {
         src={img}
         onClick={() => setCurrentIndex(idx)}
         className={`
-          w-20 h-20 object-cover rounded-lg cursor-pointer
+         w-18 h-12 md:h-16 object-cover rounded-lg cursor-pointer
           transition-all border
           ${idx === currentIndex
-            ? "border-[#A855F7] shadow-lg"
+            ? "border-purple-500 drop-shadow-[0_0_2px_rgba(168,85,247,0.7)] shadow-lg"
             : "border-transparent opacity-70 hover:opacity-100"}
         `}
       />

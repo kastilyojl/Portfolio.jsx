@@ -6,6 +6,7 @@ import Container from "./components/container";
 import SideNav from "./components/sideNav";
 import Spline from "@splinetool/react-spline";
 import ProjectModal from "./components/ProjectModal";
+import Contacts from "./components/Contacts";
 
 function App() {
   const [showScreenshots, setShowScreenshots] = useState(false);
@@ -53,7 +54,7 @@ function App() {
   //   }, []);
 
   return (
-    <div className="min-h-screen bg-black lg:pr-20 lg:pt-20 lg:pl-20 relative">
+    <div className="min-h-screen pt-10 bg-black lg:pr-20 lg:pt-20 lg:pl-20 relative">
         <div
           data-aos="fade-right"
           className="grid grid-cols-1 lg:grid-cols-[40%_1fr] gap-4 relative"
@@ -63,12 +64,15 @@ function App() {
             <section id="header">
                 <Home />
               </section>
+               <section className="hidden md:block">
+                  <Contacts/>
+              </section>
               <section id="sidebar-nav">
                 <SideNav className="lg:block bot-0 py-10 px-6 bottom-0" />
               </section>
               <section 
                 id="robot"
-                className="block -mt-20 md:-mt-10 lg:mt-0 lg:absolute lg:bottom-0 left-0 w-full h-[55vh] flex flex-col items-center">
+                className="block -mt-26 md:-mt-10 lg:mt-0 lg:absolute lg:bottom-0 left-0 w-full h-[55vh] flex flex-col items-center">
                   <Spline 
                     scene="https://prod.spline.design/dGkl7hReKvdNmjX6/scene.splinecode"
                     className="w-full h-full"
@@ -78,6 +82,9 @@ function App() {
                   w-48 h-12 -mt-22 opacity-70 pointer-events-none rounded-full blur-xl
                   bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.55)_0%,rgba(147,51,234,0.25)_40%,transparent_75%)]">
                 </div>
+              </section>
+              <section className="block md:hidden">
+                <Contacts/>
               </section>
           </div>
 
