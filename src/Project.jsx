@@ -21,6 +21,8 @@ import PortfolioV1 from "./assets/project_images/portfolio_v1/HeroPage.png";
 import ProjectPageV1 from "./assets/project_images/portfolio_v1/ProjectPage.png";
 import AboutPageV1 from "./assets/project_images/portfolio_v1/AboutPage.png";
 import ContactPageV1 from "./assets/project_images/portfolio_v1/ContactPage.png";
+import ExtractexText from "./assets/project_images/ocr/ExtractedText.png";
+import ExtractexTextInput from "./assets/project_images/ocr/ExtractedTextInserted.png";
 
 export default function Project({openModal}) {
 
@@ -31,6 +33,29 @@ export default function Project({openModal}) {
   }, []);
 
   const projects = [
+    {
+      title: "📌 Optical Character Recognition (OCR)",
+      image: ExtractexText,
+      screenshots: [
+        ExtractexText,
+        ExtractexTextInput,
+      ],
+      description:
+        "Integrated into Enrollment System v2, this OCR Form Digitization module allows users to capture or upload paper registration forms, extract text using Tesseract.js, and automatically map it into structured form fields with regex-based parsing and data cleaning, reducing manual data entry and ensuring accurate digital enrollment records.",  
+      links: [
+        {
+          name: "OCR Demo",
+          icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+          url: "https://youtu.be/Q62jBF3jgWw",
+        },
+      ],
+      technologies: [
+        {
+          name: "Tesseract.js (OCR)",
+          icon: "https://raw.githubusercontent.com/naptha/tesseract.js/master/docs/images/tesseract.png",
+        },
+      ],
+    },
     {
       title: "Portfolio v2",
       image: PortfolioV2,
@@ -178,48 +203,6 @@ export default function Project({openModal}) {
       ],
     },
     {
-      title: "Portfolio v1",
-      image: PortfolioV1,
-      screenshots: [
-        PortfolioV1,
-        ProjectPageV1,
-        AboutPageV1,
-        ContactPageV1,
-      ],
-      description:
-        "My first portfolio website, built as a static site using HTML, CSS, JavaScript, and Bootstrap. It showcases my projects, skills, and personal work in a clean and interactive layout.",
-      links: [
-        {
-          name: "Repository Link",
-          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
-          url: "https://github.com/kastilyojl/Kast1ly0-Folio",
-        },
-        {
-          name: "Project Link",
-          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
-          url: "https://kastilyojl.github.io/Kast1ly0-Folio",
-        },
-      ],
-      technologies: [
-        {
-          name: "HTML",
-          icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
-        },
-        {
-          name: "CSS",
-          icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
-        },
-        {
-          name: "JavaScript",
-          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
-        },
-        {
-          name: "Bootstrap",
-          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
-        },
-      ],
-    },
-    {
       title: "Enrollment System v1",
       image: EnrollmentV1,
       screenshots: [
@@ -268,6 +251,48 @@ export default function Project({openModal}) {
         {
           name: "MySQL",
           icon: "https://cdn-icons-png.flaticon.com/128/1199/1199128.png",
+        },
+      ],
+    },
+    {
+      title: "Portfolio v1",
+      image: PortfolioV1,
+      screenshots: [
+        PortfolioV1,
+        ProjectPageV1,
+        AboutPageV1,
+        ContactPageV1,
+      ],
+      description:
+        "My first portfolio website, built as a static site using HTML, CSS, JavaScript, and Bootstrap. It showcases my projects, skills, and personal work in a clean and interactive layout.",
+      links: [
+        {
+          name: "Repository Link",
+          icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png",
+          url: "https://github.com/kastilyojl/Kast1ly0-Folio",
+        },
+        {
+          name: "Project Link",
+          icon: "https://cdn-icons-png.flaticon.com/128/282/282100.png",
+          url: "https://kastilyojl.github.io/Kast1ly0-Folio",
+        },
+      ],
+      technologies: [
+        {
+          name: "HTML",
+          icon: "https://cdn-icons-png.flaticon.com/512/732/732212.png",
+        },
+        {
+          name: "CSS",
+          icon: "https://cdn-icons-png.flaticon.com/512/732/732190.png",
+        },
+        {
+          name: "JavaScript",
+          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+        },
+        {
+          name: "Bootstrap",
+          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
         },
       ],
     },
