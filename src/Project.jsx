@@ -45,8 +45,8 @@ export default function Project({openModal}) {
       links: [
         {
           name: "OCR Demo",
-          icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-          url: "https://youtu.be/Q62jBF3jgWw",
+          icon: "https://www.freeiconspng.com/uploads/play-button-icon-png-12.png",
+          url: "https://drive.google.com/file/d/13oD-UwdtulkMr95zqT_kG_2brff0b-W5/view?usp=sharing",
         },
       ],
       technologies: [
