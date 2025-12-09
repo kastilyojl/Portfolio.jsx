@@ -5,7 +5,7 @@ const techIcons = {
   "React.js": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   "Laravel": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg",
   "PHP": "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
-  "MySQL": "https://upload.wikimedia.org/wikipedia/en/d/dd/MySQL_logo.svg",
+  "MySQL": "https://pngimg.com/uploads/mysql/mysql_PNG23.png",
   "Tailwind CSS": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
   "Git": "https://images.icon-icons.com/2107/PNG/96/file_type_git_icon_130581.png",
   ".NET / VB .NET": "https://tse2.mm.bing.net/th/id/OIP.a5JQ4v4pMnKAJUUh7wC-DAAAAA?rs=1&pid=ImgDetMain&o=7&rm=3",
@@ -50,7 +50,8 @@ const mainTechnologies = [
   "Git",
   "RESTful API",
   "Tailwind CSS",
-  "Inertia.js"
+  "Inertia.js",
+  "MySQL"
 ];
 
 export default function TechStack() {

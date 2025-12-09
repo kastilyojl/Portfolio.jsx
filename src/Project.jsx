@@ -67,7 +67,7 @@ export default function Project({openModal}) {
         MobileViewProjectModal
       ],
       description:
-        "My second portfolio website, built as a static site using React.js and Tailwind CSS. It showcases my projects and skills in a modern, responsive, and interactive layout.",
+        "My second portfolio website, built as a static site using React.js, Tailwind CSS, and Spline 3D asset integration. It showcases my projects and skills in a modern, responsive, and interactive layout.",
       links: [
         {
           name: "Repository Link",
@@ -155,6 +155,10 @@ export default function Project({openModal}) {
           name: "Tailwind",
           icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
         },
+        {
+          name: "MySQL",
+          icon: "https://pngimg.com/uploads/mysql/mysql_PNG23.png",
+        },
       ],
     },
     {
@@ -199,6 +203,10 @@ export default function Project({openModal}) {
         {
           name: "Figma",
           icon: "https://cdn-icons-png.flaticon.com/128/5968/5968705.png",
+        },
+        {
+          name: "MySQL",
+          icon: "https://pngimg.com/uploads/mysql/mysql_PNG23.png",
         },
       ],
     },
@@ -250,7 +258,7 @@ export default function Project({openModal}) {
         },
         {
           name: "MySQL",
-          icon: "https://cdn-icons-png.flaticon.com/128/1199/1199128.png",
+          icon: "https://pngimg.com/uploads/mysql/mysql_PNG23.png",
         },
       ],
     },
