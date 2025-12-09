@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.project-container:hover .project-title {
+    background: linear-gradient(to right, #f97316, #ec4899,  #A855F7, #ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

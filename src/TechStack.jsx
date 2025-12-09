@@ -102,7 +102,7 @@ export default function TechStack() {
           className={`px-3 py-1 rounded ${
             !showAll
               ? "bg-white text-[#101828] drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]"
-              : "text-white border border-white/30"
+              : "text-white border border-white/30 cursor-pointer"
           }`}
         >
           Main Stack
@@ -112,7 +112,7 @@ export default function TechStack() {
           className={`px-3 py-1 rounded ${
             showAll
               ? "bg-white text-[#101828] drop-shadow-[0_0_8px_rgba(168,85,247,0.7)]"
-              : "text-white border border-white/30"
+              : "text-white border border-white/30 cursor-pointer"
           }`}
         >
           All Technologies

@@ -317,9 +317,9 @@ export default function Project({openModal}) {
         <div
           key={i}
           data-aos="zoom-in-up"
-          className="flex flex-col gap-4 md:p-4 rounded-xl border bg-black/10 backdrop-blur-[1px] hover:bg-white/4 hover:backdrop-blur-[4px] transition duration-300"
+          className="project-container flex flex-col gap-4 md:p-4 rounded-xl border bg-black/10 backdrop-blur-[1px] hover:bg-white/4 hover:backdrop-blur-[4px] transition duration-300"
         >
-          <h4 className="text-white text-md font-medium">{project.title}</h4>
+          <h4 className="project-title text-white text-md font-medium">{project.title}</h4>
           <p className="text-gray-400">{project.description}</p>
           {project.screenshots || project.image ? (
             <div className="grid grid-cols-4 gap-2 mt-2">
@@ -367,7 +367,7 @@ export default function Project({openModal}) {
                       <img
                         src={link.icon}
                         alt={link.name}
-                        className="w-4 h-4 object-contain" // small and inline with text
+                        className="w-4 h-4 object-contain"
                       />
                     )}
                     {link.name}
@@ -402,7 +402,7 @@ export default function Project({openModal}) {
           <div className="mt-1">
             <button
               onClick={() => openModal(project)}
-              className="w-full px-4 py-1 sm:py-2 text-sm md:text-md text-white bg-purple-600 rounded-lg hover:bg-purple-500 transition "
+              className="w-full px-4 py-1 sm:py-2 text-sm md:text-md text-white bg-purple-600 rounded-lg hover:bg-purple-500 transition cursor-pointer"
             >
               View Details
             </button>
